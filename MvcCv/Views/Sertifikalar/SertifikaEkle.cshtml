@@ -1,0 +1,16 @@
+﻿@model MvcCv.Models.Entity.TBLSERTIFIKA
+
+@{
+    ViewBag.Title = "SertifikaEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 style="margin:15px;">Sertifika Ekleme Sayfası</h2>
+
+<form method="post">
+    @Html.Label("Sertifika Adı")
+    @Html.TextBoxFor(x => x.ACIKLAMA, new {@class="form-control"})
+    <br />
+    <button class="btn btn-success">Sertifikayı Kaydet</button>
+    <br />
+</form>

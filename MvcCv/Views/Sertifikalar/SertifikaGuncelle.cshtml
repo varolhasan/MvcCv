@@ -1,0 +1,21 @@
+﻿@model MvcCv.Models.Entity.TBLSERTIFIKA
+
+@{
+    ViewBag.Title = "SertifikaGuncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 style="margin:15px;">Sertifika Güncelleme Sayfası</h2>
+
+<form method="post">
+    @Html.Label("Sertifika ID")
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    @Html.Label("Sertifika Adı")
+    @Html.TextBoxFor(x => x.ACIKLAMA, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Sertifikayı Güncelle</button>
+    <br />
+</form>
+
+

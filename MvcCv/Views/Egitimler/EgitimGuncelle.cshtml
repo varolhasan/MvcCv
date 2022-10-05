@@ -1,0 +1,35 @@
+﻿@model MvcCv.Models.Entity.TBLEGITIM
+
+@{
+    ViewBag.Title = "EgitimGuncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 style="margin:15px;">Eğitim Güncelleme Sayfası</h2>
+
+<form method="post">
+    @Html.Label("Eğitim ID")
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    @Html.Label("Başlık")
+    @Html.TextBoxFor(x => x.BASLIK, new { @class = "form-control" })
+    <br />
+    @Html.Label("Alt Başlık 1")
+    @Html.TextBoxFor(x => x.ALTBASLIK1, new { @class = "form-control" })
+    <br />
+    @Html.Label("Alt Başlık 2")
+    @Html.TextBoxFor(x => x.ALTBASLIK2, new { @class = "form-control" })
+    <br />
+    @Html.Label("GNO")
+    @Html.TextBoxFor(x => x.GNO, new { @class = "form-control" })
+    <br />
+    @Html.Label("TARİH")
+    @Html.TextBoxFor(x => x.TARIH, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Eğitim Güncelle</button>
+    <br />
+    <br />
+</form>
+
+
+

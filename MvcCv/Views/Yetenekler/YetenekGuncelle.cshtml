@@ -1,0 +1,24 @@
+﻿@model MvcCv.Models.Entity.TBLYETENEK
+
+@{
+    ViewBag.Title = "YetenekGuncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 style="margin:15px;">Yetenek Güncelleme Sayfası</h2>
+
+<form method="post">
+    @Html.Label("Yetenek ID")
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    @Html.Label("Yetenek")
+    @Html.TextBoxFor(x => x.YETENEK, new { @class = "form-control" })
+    <br />
+    @Html.Label("Yetenek Yüzdesi")
+    @Html.TextBoxFor(x => x.ORAN, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Yetenek Güncelle</button>
+    <br />
+    <br />
+</form>
+

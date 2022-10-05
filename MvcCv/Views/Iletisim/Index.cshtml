@@ -1,0 +1,69 @@
+﻿@using MvcCv.Models.Entity
+@model List<TBLILETISIM>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- /.col -->
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header p-2">
+                            <ul class="nav nav-pills">
+                                <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Mesajlar İçin Tıklayınız</a></li>
+                            </ul>
+                        </div><!-- /.card-header -->
+                        <div class="card-body">
+                            <div class="tab-content">
+                                <div class="tab-pane" id="timeline">
+                                    <!-- The timeline -->
+                                    <div class="timeline timeline-inverse">
+                                        <!-- timeline time label -->
+                                        @foreach (var item in Model)
+                                        {
+                                            <div class="time-label">
+                                                <span class="bg-cyan">
+                                                    @(((DateTime)item.TARIH).ToString("dd-MMM-yyyy"))
+                                                </span>
+                                            </div>
+                                            <!-- /.timeline-label -->
+
+                                            <!-- timeline item -->
+                                            <div>
+                                                <i class="fas fa-comments bg-warning"></i>
+                                                <div class="timeline-item">
+                                                    <span class="time">@item.MAIL</span>
+                                                    <h3 class="timeline-header"><a href="#">@item.ADSOYAD</a> @item.KONU</h3>
+                                                    <div class="timeline-body">
+                                                        @item.MESAJ
+                                                    </div>
+                                                    <div class="timeline-footer">
+                                                        <a href="/Iletisim/IletisimSil/@item.ID" 
+                                                           class="btn btn-danger btn-flat btn-sm">Sil</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.tab-content -->
+                        </div><!-- /.card-body -->
+                    </div>
+                    <!-- /.nav-tabs-custom -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+</body>
+</html>
